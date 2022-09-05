@@ -1,0 +1,46 @@
+﻿@model CategoryVM
+@{
+    ViewBag.Title = "ListCategory";
+}
+
+<h2>ListCategory</h2>
+
+
+<div class="jumbotron">
+
+    Kategorı Listesi , yeni bir kategori eklemek icin @Html.ActionLink("Tıklayınız" , "AddCategory") , 
+
+    Guncellenen Kategorıleri gormek icin @Html.ActionLink("Tıklayın" , "ListUpdateCategory")
+
+
+    Silinen Kategori yi görmek icin @Html.ActionLink("Tıklayın" , "ListDeleteCategory")
+
+</div>
+
+<div class="container">
+    
+        <table class="table table-hover">
+             <thead>
+                 <tr>
+                     <th>Kategorı ID</th>
+                     <th>Kategorı Ismi</th>
+                     <th>Acıklama</th>
+                     <th colspan="2" style="text-align:center">Islemler</th>
+                 </tr>
+             </thead>
+            <tbody>
+                @foreach (Category item in Model.Categories)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.CategoryName</td>
+                        <td>@item.Description</td>
+                        <td>@Html.ActionLink("Guncelle" , "UpdateCategory" , new {id = item.ID} , new {@class = "btn btn-warning"})</td>
+                        <td>@Html.ActionLink("Sil" , "DeleteCategory" , new {id = item.ID} , new {@class = "btn btn-danger"})</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+   
+</div>
+

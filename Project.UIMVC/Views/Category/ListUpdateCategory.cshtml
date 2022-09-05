@@ -1,0 +1,38 @@
+﻿@model CategoryVM
+@{
+    ViewBag.Title = "ListUpdateCategory";
+}
+
+<h2>ListUpdateCategory</h2>
+
+<div class="jumbotron">
+
+    Guncellenen Kategorı Listesi , Tum Listeyi Goruntulemek ıcın @Html.ActionLink("Tıklayın" , "ListCategory")
+
+</div>
+
+
+<div class="container">
+     <table class="table table-hover">
+         <thead>
+
+             <tr>
+                 <th>Kategorı ID</th>
+                 <th>Kategorı Ismi</th>
+                 <th>Acıklaması</th>
+             </tr>
+         </thead>
+       <tbody>
+           @foreach (Category item in Model.Categories)
+           {
+               <tr>
+                   <td>@item.ID</td>
+                   <td>@item.CategoryName</td>
+                   <td>@item.Description</td>
+               </tr>
+           }
+       </tbody>
+     </table>
+
+   
+</div>

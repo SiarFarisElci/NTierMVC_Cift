@@ -1,0 +1,45 @@
+﻿@model CategoryVM
+
+@{
+    ViewBag.Title = "UpdateCategory";
+}
+
+<h2>UpdateCategory</h2>
+
+
+<div class="jumbotron">
+    Kategori Guncelleme Sayfası
+</div>
+
+
+<div class="panel panel-primary">
+
+    <div class="panel panel-body">
+
+        @using(Html.BeginForm())
+            {
+
+
+            @Html.HiddenFor(x=> x.Category.ID)
+
+            <div>
+                @Html.TextBoxFor(x=> x.Category.CategoryName , new  {@class = "form-control" })
+            </div>
+
+            <br />
+
+            <div>
+                @Html.TextBoxFor(x=> x.Category.Description , new {@class = "form-control" })
+            </div>
+
+            <br />
+
+            <button class="btn btn-warning">
+                Guncelle
+            </button>
+
+            }
+
+
+    </div>
+</div>

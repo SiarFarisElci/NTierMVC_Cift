@@ -1,0 +1,42 @@
+﻿@model CategoryVM
+
+@{
+    ViewBag.Title = "ListDeleteCategory";
+}
+
+<h2>ListDeleteCategory</h2>
+
+
+<div class="jumbotron">
+
+    Silinen Kategori Listesi
+
+    <div>
+        Tum verileri  gormek icin @Html.ActionLink("Tıklayın" , "ListCategory")
+    </div>
+
+</div>
+
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Kategorı ID</th>
+                <th>Kategorı Ismi</th>
+                <th>Acıklama</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Category item in Model.Categories)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.Description</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>

@@ -1,0 +1,42 @@
+﻿@model EmployeeVM
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>AddEmployee</h2>
+
+<div class="jumbotron">
+    Calısan Ekleme Sayfası
+</div>
+
+
+<div class="container">
+
+    <div class="panel panel-primary">
+
+        <div class="panel panel-body">
+
+
+            @using (Html.BeginForm())
+            {
+
+                <div>
+                    @Html.TextBoxFor(x=> x.Employee.FirstName , new  {@class = "from-control" , placeholder= "Lutfen isim giriniz" }  )
+                </div>
+                <br />
+
+                <div>
+                    @Html.TextBoxFor(x=> x.Employee.LastName , new  {@class = "control-form" , placeholder = "Lutfen SoyIsım giriniz" })
+                </div>
+
+                <br />
+
+                <button class="btn btn-warning">
+                    Ekle
+                </button>
+            }
+
+        </div>
+
+    </div>
+</div>

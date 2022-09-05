@@ -1,0 +1,46 @@
+﻿@model EmployeeVM
+@{
+    ViewBag.Title = "UpdateEmployee";
+}
+
+<h2>UpdateEmployee</h2>
+
+<div class="jumbotron">
+    Calısan Guncelleme sayfası , Tum listeyi gormek icin @Html.ActionLink("tıklayınız" , "ListEmployee")
+</div>
+
+
+
+<div class="container">
+    <div class="panel panel-primary">
+
+        <div class="panel panel-body">
+
+            @using (Html.BeginForm())
+            {
+
+                @Html.HiddenFor(x=> x.Employee.ID)
+
+
+                 <div>
+                     @Html.TextBoxFor(x=> x.Employee.FirstName , new  {@class = "form-control" })
+
+                 </div>   
+                        <br />
+                 <div>
+                     @Html.TextBoxFor(x=> x.Employee.LastName , new {@class = "form-control" })
+                 </div>
+
+
+                 <button class="btn btn-warning"> 
+                     Guncelle
+                 </button>
+            }
+
+
+        </div>
+    </div>
+</div>
+
+
+

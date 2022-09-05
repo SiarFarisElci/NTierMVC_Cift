@@ -1,0 +1,54 @@
+﻿@model EmployeeVM
+
+@{
+    ViewBag.Title = "ListEmployee";
+}
+
+<h2>ListEmployee</h2>
+
+<div class="jumbotron">
+    Calısan Ekleme Sayfası , yeni calısan eklemek icin @Html.ActionLink("tıklayınız", "AddEmployee")
+    <br />
+
+    Guncellenen calısanları gormek icin @Html.ActionLink("tıklayınız", "UpdateListEmployee")
+
+    <br />
+    Silinen calısanları gormek icin @Html.ActionLink("tıklayınız", "DeleteListEmployee")
+</div>
+
+<div class="container">
+     
+    <div class="panel panel-body">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Employee ID </th>
+                    <th>Isim </th>
+                    <th>SoyIsım </th>
+                    <th colspan="2" style="text-align:center">Islemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Employee item in Model.Employees)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@Html.ActionLink("Guncelle" , "UpdateEmployee" , "Employee" , new {id = item.ID} , new {@class = "btn btn-warning"})</td>
+                        <td>@Html.ActionLink("Sil" , "DeleteEmployee" , "Employee" , new {id = item.ID} , new {@class = "btn btn-danger"})</td>
+                    </tr>
+                }
+            </tbody>
+
+
+
+        </table>
+
+
+
+    </div>
+
+    
+</div>

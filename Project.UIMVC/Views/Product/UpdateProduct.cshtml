@@ -1,0 +1,45 @@
+﻿@model ProductVM
+@{
+    ViewBag.Title = "UpdateProduct";
+}
+
+<h2>UpdateProduct</h2>
+
+
+<div class="jumbotron">
+
+    Kategori Guncelleme Listesi
+</div>
+
+
+<div class="container">
+
+    <div class="panel panel-primary">
+        <div class="panel panel-body">
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(x => x.Product.ID)
+
+
+                <div>
+                    @Html.TextBoxFor(x => x.Product.ProductName, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    @Html.TextBoxFor(x => x.Product.UnitPrice, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    @Html.DropDownListFor(x => x.Product.CategoryID, new SelectList(Model.Categories, "ID", "CategoryName"), "Lutfen Seciniz", new { @class = "form-control" })
+                </div>
+                <br />
+                <button class="btn btn-warning">
+                    Guncelle
+                </button>
+
+            }
+        </div>
+    </div>
+
+</div>

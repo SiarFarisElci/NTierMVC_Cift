@@ -1,0 +1,41 @@
+﻿@model EmployeeVM
+@{
+    ViewBag.Title = "DeleteListEmployee";
+}
+
+<h2>DeleteListEmployee</h2>
+
+<div class="jumbotron">
+    Pasife Cekilen Calısan Listesi
+
+    Calısan Listesine gitmek icin @Html.ActionLink("tıklayınız" , "ListEmployee")
+</div>
+
+
+<div class="container">
+
+    <div class="panel panel-body">
+
+        <table class="table table-hover">
+
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Isım</th>
+                    <th>SoyIsım</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Employee item in Model.Employees)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

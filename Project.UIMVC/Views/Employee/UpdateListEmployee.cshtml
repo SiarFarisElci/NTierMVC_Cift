@@ -1,0 +1,39 @@
+﻿@model EmployeeVM
+
+@{
+    ViewBag.Title = "UpdateListEmployee";
+}
+
+<h2>UpdateListEmployee</h2>
+
+<div class="jumbotron">
+    Guncellenen Calısanlar , tum listeyi gormek icin @Html.ActionLink("tıklayınız" , "ListEmployee")
+</div>
+
+
+<div class="container">
+    <div class="panel panel-body">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Employe ID</th>
+                    <th>Isım</th>
+                    <th>SoyIsım</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Employee item in Model.Employees)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
